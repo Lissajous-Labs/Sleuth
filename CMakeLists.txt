@@ -45,3 +45,9 @@ target_compile_definitions(Sleuth PUBLIC JUCE_WEB_BROWSER=1 JUCE_USE_CURL=0 JUCE
     JUCE_REPORT_APP_USAGE=0 JUCE_USE_WIN_WEBVIEW2_WITH_STATIC_LINKING=$<BOOL:${WIN32}>)
 target_link_libraries(Sleuth PRIVATE SleuthWebData juce::juce_audio_utils juce::juce_gui_extra
     PUBLIC juce::juce_recommended_config_flags juce::juce_recommended_warning_flags)
+
+add_executable(sleuth_tests tests/TapTest.cpp)
+target_include_directories(sleuth_tests PRIVATE source)
+target_compile_features(sleuth_tests PRIVATE cxx_std_20)
+find_package(Threads REQUIRED)
+target_link_libraries(sleuth_tests PRIVATE Threads::Threads)
