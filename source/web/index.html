@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sleuth</title>
+<link rel="stylesheet" href="./style.css">
+<script type="module" src="./app.js"></script>
+</head>
+<body>
+<main id="app">
+  <section class="panel signal">
+    <nav class="tabs" id="sigMode"><span class="brand">Sleuth</span></nav>
+    <div class="sig led"><canvas id="sigCanvas"></canvas><div class="sig-hud" id="sigHud"></div></div>
+  </section>
+  <section class="panel field">
+    <nav class="tabs" id="scopeMode"></nav>
+    <div class="scope-wrap">
+      <div class="meter" id="meterL"><i class="rms"></i><i class="pk"></i><b class="hold"></b><span>L</span></div>
+      <div class="scope led" id="scope">
+        <canvas class="grat"></canvas><canvas class="bloom"></canvas><canvas class="beam"></canvas>
+        <div class="scope-hud"><span id="scopeZoom">×1.0</span><button id="scopeAuto" aria-pressed="true">Auto</button></div>
+      </div>
+      <div class="meter" id="meterR"><i class="rms"></i><i class="pk"></i><b class="hold"></b><span>R</span></div>
+    </div>
+    <div class="hbars">
+      <div class="hbar" id="corr"><label>Phase</label><div class="hb-track"><i class="hb-fill"></i><b class="hb-dot"></b></div><output>—</output></div>
+      <div class="hbar" id="bal"><label>Balance</label><div class="hb-track"><i class="hb-fill"></i><b class="hb-dot"></b></div><output>—</output></div>
+    </div>
+    <div class="readouts">
+      <div><b id="width">—</b><span>Width</span></div>
+      <div><b id="peakL">—</b><span>Peak L</span></div>
+      <div><b id="peakR">—</b><span>Peak R</span></div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
